@@ -16,7 +16,7 @@ class Login extends CI_Controller
 
     public function proses_login()
     {
-        $user = $this->input->post('username');
+        $user = $this->input->post('namauser');
         $pass = $this->input->post('password');
 
         $this->m_login->proses_login($user, $pass);

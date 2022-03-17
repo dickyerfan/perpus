@@ -36,7 +36,7 @@
             <?= $this->session->unset_userdata('info'); ?>
             <form action="<?= base_url() ?>login/proses_login" method="post">
                 <div class="form-group has-feedback">
-                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    <input type="text" name="namauser" class="form-control" placeholder="namauser" required>
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">

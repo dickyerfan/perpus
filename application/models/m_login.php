@@ -6,7 +6,7 @@ class M_login extends CI_Model
     public function proses_login($user, $pass)
     {
         $password = md5($pass);
-        $user = $this->db->where('username', $user);
+        $user = $this->db->where('namauser', $user);
         $pass = $this->db->where('password', $password);
         $query = $this->db->get('login');
 
@@ -15,7 +15,7 @@ class M_login extends CI_Model
                 $sess = array(
                     'id' => $row->id,
                     'nama' => $row->nama,
-                    'username' => $row->username,
+                    'namauser' => $row->namauser,
                     'password' => $row->password,
                     'level' => $row->level
                 );
@@ -23,7 +23,7 @@ class M_login extends CI_Model
             }
             redirect('dashboard');
         } else {
-            $this->session->set_flashdata('info', '<div class="alert alert-danger" role="alert">Login Gagal, Silakan Periksa Username dan Password!</div>');
+            $this->session->set_flashdata('info', '<div class="alert alert-danger" role="alert">Login Gagal, Silakan Periksa namauser dan Password!</div>');
             redirect('login');
         }
     }
